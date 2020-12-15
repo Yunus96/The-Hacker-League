@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const hackersSchema = new mongoose.Schema({
+    
 
 });
 

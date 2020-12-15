@@ -1,3 +1,5 @@
+const Hackers = require('../models/Hackers');
+
 const router = require('express').Router();
 
 router.get('/', (req, res)=>{
@@ -9,6 +11,9 @@ router.get('/leader-board', (req, res)=>{
 })
 
 router.get('/add-team', (req, res) => {
+    const add_Team = new Hackers({
+        
+    })
     res.status(200).send("Add Team")
 })
 
