@@ -3,6 +3,5 @@ Develop a Full Stack application where multiple teams of Hackers compete for the
 
 
 ### ToDo Things
-
-* Add 2 teams functionality to application
+* Select 2 teams functionality to application
 * Front End development
