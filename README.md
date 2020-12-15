@@ -3,6 +3,7 @@ Develop a Full Stack application where multiple teams of Hackers compete for the
 
 
 ### ToDo Things
-* Select 2 teams functionality to application
-* add 'JOI' package for validating user input
-* Front End development
+1. Select 2 teams functionality to application
+2. add 'JOI' package for validating user input
+3. put check for team name when adding team name
+4. Front End development
