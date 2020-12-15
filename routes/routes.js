@@ -10,11 +10,20 @@ router.get('/leader-board', (req, res)=>{
     res.status(200).send("leader board")
 })
 
-router.get('/add-team', (req, res) => {
+router.get('/add-team',async (req, res) => {
     const add_Team = new Hackers({
-        
+        team_name: req.query.team_name,
+        total_wins: 0,
+        total_losses: 0,
+        total_ties: 0,
+        total_score: 0
     })
-    res.status(200).send("Add Team")
+    try{
+        const saved_team = await add_Team.save()
+        res.status(200).json(saved_team)
+    } catch (err){
+        res.status(400).json(err)
+    }
 })
 
 router.get('/select-teams', (req, res)=>{

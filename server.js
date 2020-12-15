@@ -8,7 +8,8 @@ const Routes = require('./routes/routes')
 app.use('/', Routes)
 
 //configuring mongoose to connect with mongodb
-mongoose.connect('process.env.MONGO_URL', { useNewUrlParser : true })
+mongoose.set('useUnifiedTopology', true);
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser : true })
 const db = mongoose.connection
 db.on('error', (error) => console.log(error))
 db.once('open', ()=> console.log("DB connected successfully"))
