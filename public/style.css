@@ -1,6 +1,9 @@
 a{
     text-decoration: none;
 }
+a:hover{
+    text-decoration: underline;
+}
 .blog-header {
     line-height: 1;
     border-bottom: 1px solid #e5e5e5;
