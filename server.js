@@ -3,6 +3,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
+//Setting view engine
+app.set('view engine', 'ejs');
+
+//tells to use static files
+app.use(express.static('public'))
+
 //import routes
 const Routes = require('./routes/routes')
 app.use('/', Routes)

@@ -3,7 +3,7 @@ const Hackers = require('../models/Hackers');
 const router = require('express').Router();
 
 router.get('/', (req, res)=>{
-  res.status(200).json('Hi there')  
+  res.render('index');  
 })
 
 router.get('/leader-board', (req, res)=>{
