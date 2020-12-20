@@ -29,9 +29,56 @@
       <div class="btn-container">
         <a class="filter-btn btn" href="/">Home</a>
         <a class="filter-btn btn" href="/leader-board">Leader Board</a>
-        <a class="filter-btn btn" href="#">Add Team</a>
-        <a class="filter-btn btn" href="#">Select Teams</a>
+        <a class="filter-btn btn" data-toggle="modal" data-target="#loginModal" href="#">Add Team</a>
+        <a class="filter-btn btn" data-toggle="modal" data-target="#selectTeamModal" href="#">Select Teams</a>
       </div>
+
+      <!--Modals-->
+      <!--<div class="container jumbotron text-center">
+        <h3>bootstrap Modal login form </h3>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login</button>
+      </div>
+    -->
+    <div class="modal fade select-team" role="dialog" id="selectTeamModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Select Your Teams</h3>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Team Name" id="">
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn filter-btn">Add My Team</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+    <div class="modal fade" role="dialog" id="loginModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Add Your Team</h3>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Team Name" id="">
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn filter-btn">Add My Team</button>
+            </div>
+          </div>
+        </div>
+    </div>
 
       <div class="container">
         <!--<h2>Dashboard</h2>-->
