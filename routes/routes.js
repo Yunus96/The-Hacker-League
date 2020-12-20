@@ -7,7 +7,7 @@ router.get('/', (req, res)=>{
 })
 
 router.get('/leader-board', (req, res)=>{
-    res.status(200).send("leader board")
+    res.render("leader-board")
 })
 
 router.get('/add-team',async (req, res) => {
