@@ -8,4 +8,3 @@ Developing a Full Stack application where multiple teams of Hackers compete for 
 2. Connect frontend to backend
 1. add 'JOI' package for validating user input
 2. put check for team name when adding team name
-3. Front End development
