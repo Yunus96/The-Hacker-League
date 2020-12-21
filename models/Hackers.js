@@ -19,7 +19,7 @@ const hackersSchema = new mongoose.Schema({
         type: Number,
         total_ties: { type: Number, default: 0}
     },
-    scores: {
+    score: {
         type: Number,
         total_scores: { type: Number, default: 0}
     }
