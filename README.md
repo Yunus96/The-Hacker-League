@@ -6,5 +6,6 @@ Developing a Full Stack application where multiple teams of Hackers compete for 
 
 1. complete "select modals"
 2. populate data from backend to leader-board
+3. Add "add team" functionality
 1. add 'JOI' package for validating user input
 2. put check for team name when adding team name
