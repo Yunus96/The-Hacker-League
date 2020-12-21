@@ -22,7 +22,8 @@ db.once('open', ()=> console.log("DB connected successfully"))
 
 //Lets our server to accept json
 app.use(express.json())
-
+//lets our server accept urlparameter
+app.use(express.urlencoded({extended: false}))
 
 
 app.listen(process.env.PORT, ()=> console.log("Server Started"))

@@ -111,40 +111,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1.</td>
-              <td>Team 1</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>1.</td>
-              <td>Team 1</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>1.</td>
-              <td>Team 1</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>1.</td>
-              <td>Team 1</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
+            <% allData.forEach((eachData, index=1 )=> { %> 
+              <tr> 
+                <td><%= index %> </td>
+                <td><%= eachData.team_name %></td>
+                <td><%= eachData.wins %></td>
+                <td><%= eachData.losses %></td>
+                <td><%= eachData.ties %></td>
+                <td><%= eachData.score %></td>
+              </tr>  
+            <% }) %>          
           </tbody>
-
         </table>
       </div>
 

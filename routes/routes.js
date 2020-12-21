@@ -2,8 +2,9 @@ const Hackers = require('../models/Hackers');
 
 const router = require('express').Router();
 
-router.get('/', (req, res)=>{
-  res.render('index');  
+router.get('/',async (req, res)=>{
+    const allData = await Hackers.find()
+    res.render('index', {allData : allData });  
 })
 
 router.get('/leader-board', (req, res)=>{
