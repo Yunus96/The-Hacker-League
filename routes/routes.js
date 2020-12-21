@@ -7,8 +7,9 @@ router.get('/',async (req, res)=>{
     res.render('index', {allData : allData });  
 })
 
-router.get('/leader-board', (req, res)=>{
-    res.render("leader-board")
+router.get('/leader-board',async (req, res)=>{
+    const allData = await Hackers.find()
+    res.render("leader-board", {allData : allData})
 })
 
 router.get('/add-team',async (req, res) => {
