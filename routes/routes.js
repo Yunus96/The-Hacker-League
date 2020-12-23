@@ -22,9 +22,9 @@ router.get('/add-team',async (req, res) => {
     });
     try{
         const new_team = await add_Team.save();
-        res.status(201).json(new_team)
+        res.status(201).json({message : "Team Add Successfully"})
     } catch (err){
-        res.status(400).json(err)
+        res.status(400).json({message : "Something Went Wrong"})
     }
 });
 
