@@ -74,23 +74,30 @@
     
     <!--adding Modal-->
     <div class="modal fade" role="dialog" id="loginModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title">Add Your Team</h3>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <input type="text" name="username" class="form-control" placeholder="Team Name" id="">
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn filter-btn">Add My Team</button>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Add Your Team</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" name="team_name" class="form-control" placeholder="Team Name" id='team_name'>
             </div>
           </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn filter-btn" data-dismiss="modal" onclick="addTeam()">Add My Team</button>
+          </div>
         </div>
+      </div>
+    </div>
+    <!--alert for "add team"-->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="addTeam" style="display: none;text-align: center;background-color: #C59D5F;color: white;" >
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong>Heads Up!</strong> Your Team Is Added Successfully.
     </div>
 
       <div class="container">
@@ -122,6 +129,21 @@
       $(document).ready( function () {
         $('#myTable').DataTable();
       } );
+
+      const addTeam = () =>{
+        var teamname = document.getElementById('team_name').value
+        const req = new XMLHttpRequest();
+        req.open('GET', '/add-team?team_name='+teamname, true);
+        req.send();
+        req.onload = () => {
+          const json = JSON.parse(req.responseText);
+          document.getElementById('loginModal').style.display = 'none';
+          document.getElementById('addTeam').style.display = 'block';
+        }
+        req.onerror = ()=>{
+          alert('something went wrong')
+        }
+      }
       </script>
   </body>
 </html>
