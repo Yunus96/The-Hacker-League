@@ -13,6 +13,11 @@ router.get('/leader-board',async (req, res)=>{
 })
 
 router.get('/add-team',async (req, res) => {
+
+    //check whether team exist
+    const team_exist = await Hackers.findOne({team_name : req.query.team_name})
+    if(team_exist) return res.json({'message' : "team exist"})
+
     const add_Team = new Hackers({
         team_name: req.query.team_name,
         wins : 0,
