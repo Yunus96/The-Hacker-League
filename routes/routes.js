@@ -27,7 +27,7 @@ router.get('/add-team',async (req, res) => {
         wins : 0,
         losses : 0,
         ties : 0,
-        scores : 0
+        score : 0
     });
     try{
         const new_team = await add_Team.save();
@@ -43,6 +43,14 @@ router.get('/select-teams',async (req, res)=>{
     const team_won = req.query.team_won;
     const team_lost = req.query.team_lost;
     const tie = req.query.tie;
+
+    //checking for team_a exist
+    const team_a_exist = await Hackers.findOne({team_name : team_a})
+    if(!team_a_exist) return res.json({'message' : `${team_a} doesn't exist`})
+    //checking for team_b exist
+    const team_b_exist = await Hackers.findOne({team_name : team_b})
+    if(!team_b_exist) return res.json({"message" : `${team_b} doesn't exist`})
+
     
     if(tie == 'true') {
         const teamA = await Hackers.updateOne({ team_name: team_a }, { $inc : { ties : 1, scores: 1}});
