@@ -2,7 +2,11 @@ const Hackers = require('../models/Hackers');
 
 const router = require('express').Router();
 
-router.get('/',async (req, res)=>{
+router.get('/', (req, res)=>{
+    res.render('home');  
+})
+
+router.get('/dashboard', async (req, res)=>{
     const allData = await Hackers.find()
     res.render('index', {allData : allData });  
 })
@@ -51,8 +55,5 @@ router.get('/select-teams',async (req, res)=>{
     }
 })
 
-router.get('/search', (req, res)=>{
-    res.send("searching")
-})
 
 module.exports = router;

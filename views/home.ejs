@@ -36,12 +36,6 @@
         <a class="filter-btn btn" data-toggle="modal" data-target="#selectTeamModal" href="#">Select Teams</a>
       </div>
 
-      <!--Modals-->
-      <!--<div class="container jumbotron text-center">
-        <h3>bootstrap Modal login form </h3>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login</button>
-      </div>
-    -->
       <!--Selecting Modal-->
       <div class="modal fade select-team" role="dialog" id="selectTeamModal">
         <div class="modal-dialog">
@@ -109,40 +103,17 @@
         </button>
         <strong>Oops!</strong> Team Name already taken.
       </div>
-      <!--<div class="alert alert-info" role="alert" >
-        <strong>Heads up!</strong> Team Added.
-      </div>-->
+      
 
-
-      <div class="container">
-        <h2 style="text-align: center;">Dashboard</h2>
-        <table class="table table-fluid table-striped" id="myTable">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Team Name</th>
-              <th>Wins</th>
-              <th>Losts</th>
-              <th>Ties</th>
-              <th>Scores</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% allData.forEach((eachData, index )=> { %> 
-              <tr> 
-                <td><%= index+1 %> </td>
-                <td><%= eachData.team_name %></td>
-                <td><%= eachData.wins %></td>
-                <td><%= eachData.losses %></td>
-                <td><%= eachData.ties %></td>
-                <td><%= eachData.score %></td>
-              </tr>  
-            <% }) %>          
-          </tbody>
-        </table>
-      </div>
+      <section class="jumbotron text-center" style="background-color: beige;">
+        <div class="container">
+          <h1 class="jumbotron-heading">About Hacker League</h1>
+          <p class="lead text-muted">The Hacker League is a two team game to find the fastest coding team. You can fight a random opponent of your skill level and improve your programming skill. You will be required to solve a problem in limited time, and whoever solves the problem first wins the game. Start the fight now!</p>
+        </div>
+      </section>
 
     </section>
+
     <script>
       $(document).ready( function () {
         var t = $('#myTable').DataTable( {
@@ -181,6 +152,6 @@
           alert('something went wrong')
         }
       }
-      </script>
+    </script>
   </body>
 </html>
