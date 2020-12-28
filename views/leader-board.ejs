@@ -50,20 +50,27 @@
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <input type="text" name="username" class="form-control" placeholder="Team A" id="">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" name="username" class="form-control" placeholder="Team B" id="">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" name="username" class="form-control" placeholder="Match Result" id="">
-                  </div>
-                  <div class="form-group" style="text-align: center;">
-                    <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="optradio">Match Tie
-                      </label>
-                  </div>
+              <div class="form-group">
+                <input onchange="setValue(event, 0)" type="text" name="team_a" class="form-control" placeholder="Team A" id="team_a">
+              </div>
+              <div class="form-group">
+                <input onchange="setValue(event, 1)" type="text" name="team_b" class="form-control" placeholder="Team B" id="team_b">
+              </div>
+              <!-- Example single danger button -->
+              <div class="btn-group" style="padding-left: 35%; padding-bottom: 5%;">
+                <button type="button" style="background-color: #C59D5F; border-color: #C59D5F;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Winner
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#" id="option_a">team A</a>
+                  <a class="dropdown-item" href="#" id="option_b">Team B</a>
+                </div>
+              </div>
+              <div class="form-group" style="text-align: center;">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio"> Match Tie
+                </label>
+              </div>
             </div>
 
             <div class="modal-footer">
@@ -135,6 +142,18 @@
 
     </section>
     <script>
+      function setValue(event, n) {
+  
+      // User input
+      const userinput = event.target.value;
+
+      // Get nth typeOf <option>
+      const option = document.getElementsByClassName('dropdown-item')[n];
+
+      // Set value
+      option.value = option.innerHTML = userinput;
+      }
+
       $(document).ready( function () {
         var t = $('#myTable').DataTable( {
         "columnDefs": [ {
