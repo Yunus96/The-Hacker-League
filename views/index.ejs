@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      function setValue(event, n) {
+  
+      // User input
+      const userinput = event.target.value;
+  
+      // Get nth typeOf <option>
+      const option = document.getElementsByClassName('dropdown-item')[n];
+  
+      // Set value
+      option.value = option.innerHTML = userinput;
+      }
+    </script>
     <!--Favicon-->
     <link rel="icon" href="/images/favicon (1).ico" type="image/gif" sizes="32x32">
     <meta charset="UTF-8">
@@ -52,18 +65,18 @@
             </div>
             <div class="modal-body">
               <div class="form-group">
-                <input type="text" name="team_a" class="form-control" placeholder="Team A" id="team_a">
+                <input onchange="setValue(event, 0)" type="text" name="team_a" class="form-control" placeholder="Team A" id="team_a">
               </div>
               <div class="form-group">
-                <input type="text" name="team_b" class="form-control" placeholder="Team B" id="team_b">
+                <input onchange="setValue(event, 1)" type="text" name="team_b" class="form-control" placeholder="Team B" id="team_b">
               </div>
               <!-- Example single danger button -->
               <div class="btn-group" style="padding-left: 35%; padding-bottom: 5%;">
-                <button type="button" style="background-color: #C59D5F; border-color: #C59D5F;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button onclick="update()" type="button" style="background-color: #C59D5F; border-color: #C59D5F;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Winner
                 </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#" id="option_a"></a>
+                  <a class="dropdown-item" href="#" id="option_a">team A</a>
                   <a class="dropdown-item" href="#" id="option_b">Team B</a>
                 </div>
               </div>
@@ -193,10 +206,7 @@
           alert('something went wrong')
         }
       }
-      var team_A_value = document.getElementById('team_a').value;
-      var team_B_value = document.getElementById('team_b').value;
-      document.getElementsByClassName('dropdown-item')[0].innerHTML = team_A_value;
-      document.getElementsByClassName('dropdown-item')[1].innerHTML = team_B_value;
+      
       </script>
   </body>
 </html>
