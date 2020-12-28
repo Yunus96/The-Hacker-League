@@ -52,19 +52,19 @@
             </div>
             <div class="modal-body">
               <div class="form-group">
-                <input type="text" name="team_a" class="form-control" placeholder="Team A" id="">
+                <input type="text" name="team_a" class="form-control" placeholder="Team A" id="team_a">
               </div>
               <div class="form-group">
-                <input type="text" name="team_b" class="form-control" placeholder="Team B" id="">
+                <input type="text" name="team_b" class="form-control" placeholder="Team B" id="team_b">
               </div>
               <!-- Example single danger button -->
-              <div class="btn-group" >
+              <div class="btn-group" style="padding-left: 35%; padding-bottom: 5%;">
                 <button type="button" style="background-color: #C59D5F; border-color: #C59D5F;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Winner
                 </button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Team A</a>
-                  <a class="dropdown-item" href="#">Team B</a>
+                  <a class="dropdown-item" href="#" id="option_a"></a>
+                  <a class="dropdown-item" href="#" id="option_b">Team B</a>
                 </div>
               </div>
               <!--
@@ -193,6 +193,10 @@
           alert('something went wrong')
         }
       }
+      var team_A_value = document.getElementById('team_a').value;
+      var team_B_value = document.getElementById('team_b').value;
+      document.getElementsByClassName('dropdown-item')[0].innerHTML = team_A_value;
+      document.getElementsByClassName('dropdown-item')[1].innerHTML = team_B_value;
       </script>
   </body>
 </html>
