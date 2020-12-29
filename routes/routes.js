@@ -55,7 +55,7 @@ router.get('/select-teams',async (req, res)=>{
     if(tie == 'true') {
         const teamA = await Hackers.updateOne({ team_name: team_a }, { $inc : { ties : 1, scores: 1}});
         const teamB = await Hackers.updateOne( {team_name: team_b}, {$inc: {ties: 1, scores: 1}} )
-        return res.status(200).json("Scores Updated")
+        return res.status(200).json({"Message":"Match Result Updated"})
     }else{
         await Hackers.updateOne({ team_name: team_won }, { $inc : { wins : 1, scores: 3}});
         await Hackers.updateOne({ team_name: team_lost }, { $inc : { losses : 1}});
