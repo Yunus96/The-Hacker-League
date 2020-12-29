@@ -37,7 +37,7 @@ router.get('/add-team',async (req, res) => {
     }
 });
 
-router.get('/select-teams',async (req, res)=>{
+router.get(`/select-teams`,async (req, res)=>{
     const team_a = req.query.team_a;
     const team_b = req.query.team_b;
     const team_won = req.query.team_won;

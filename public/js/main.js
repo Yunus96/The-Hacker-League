@@ -1,3 +1,6 @@
+
+
+
 //"Select teams" option functionality
 function setValue(event, n) {  
       // User input
@@ -10,24 +13,25 @@ function setValue(event, n) {
 
 //"Select Teams" sending request to server
 const matchResult = () => {
-  let team_a;
-  let team_b;
-  let winning_team;
-  let match_tie;
-  let url = `/select-teams?team_a=${team_a}&team_b=${team_b}&winning_team=${winning_team}&match_tie=${match_tie}`
+  let team_a = document.getElementById('team_a').value;
+  let team_b = document.getElementById('team_b').value;
+  let winning_team = document.getElementById('winning_team').value;
+  let match_tie = document.getElementById('match_tie').value;
+  console.log(match_tie)
+  let url = `/select-teams?team_a=${team_a}&team_b=${team_b}&winning_team=${winning_team}&tie=${match_tie}`
   const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.send();
-    req.onload = () => {
-      const json = JSON.parse(req.responseText);
-      if( json.message == 'team exist'){
-        document.getElementById('team_exist').style.display = 'block';
+    xhr.onload = () => {
+      const json = JSON.parse(xhr.responseText);
+      if( json.message == '"Match Result Updated"'){
+        document.getElementById('result').style.display = 'block';
       } 
       else {
         document.getElementById('loginModal').style.display = 'none';
       }
     }
-    req.onerror = ()=>{
+    xhr.onerror = ()=>{
       alert('something went wrong')
     }
 }
@@ -71,5 +75,10 @@ const matchResult = () => {
         req.onerror = ()=>{
           alert('something went wrong')
         }
+      }
+
+//disabling winner option
+      function turnTrue() {
+        return document.getElementById("match_tie").value = 'true';
       }
     
