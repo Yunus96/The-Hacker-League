@@ -10,17 +10,26 @@ function setValue(event, n) {
 
 //"Select Teams" sending request to server
 const matchResult = () => {
+  let team_a;
+  let team_b;
+  let winning_team;
+  let match_tie;
+  let url = `/select-teams?team_a=${team_a}&team_b=${team_b}&winning_team=${winning_team}&match_tie=${match_tie}`
   const xhr = new XMLHttpRequest();
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 201){
-        const serverResponse = JSON.parse(xhr.response);
-        document.getElementsByClassName('message')[0].textContent = serverResponse.userName + serverResponse.suffix;
+    xhr.open('GET', url, true);
+    xhr.send();
+    req.onload = () => {
+      const json = JSON.parse(req.responseText);
+      if( json.message == 'team exist'){
+        document.getElementById('team_exist').style.display = 'block';
+      } 
+      else {
+        document.getElementById('loginModal').style.display = 'none';
       }
-    };
-    const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
-    xhr.send(body);
+    }
+    req.onerror = ()=>{
+      alert('something went wrong')
+    }
 }
     
     
