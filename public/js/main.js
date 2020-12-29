@@ -1,15 +1,17 @@
-      function setValue(event, n) {
-  
+//"Select teams" option functionality
+function setValue(event, n) {  
       // User input
-      const userinput = event.target.value;
-  
+      const userinput = event.target.value; 
       // Get nth typeOf <option>
-      const option = document.getElementsByClassName('dropdown-item')[n];
-  
+      const option = document.getElementsByClassName('dropdown-item')[n];  
       // Set value
       option.value = option.innerHTML = userinput;
       }
+
+//"Select Teams" sending request to server
+
     
+// Table functionality
       $(document).ready( function () {
         var t = $('#myTable').DataTable( {
         "columnDefs": [ {
@@ -28,6 +30,7 @@
 
       } );
 
+// "Add Team" option functionality
       const addTeam = () =>{
         var teamname = document.getElementById('team_name').value
         const req = new XMLHttpRequest();
