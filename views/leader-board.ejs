@@ -35,50 +35,45 @@
         <a class="filter-btn btn" data-toggle="modal" data-target="#selectTeamModal" href="#">Select Teams</a>
       </div>
 
-      <!--Modals-->
-      <!--<div class="container jumbotron text-center">
-        <h3>bootstrap Modal login form </h3>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login</button>
-      </div>
-    -->
-    <!--Selecting Modal-->
-    <div class="modal fade select-team" role="dialog" id="selectTeamModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title">Select Your Teams</h3>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <input onchange="setValue(event, 0)" type="text" name="team_a" class="form-control" placeholder="Team A" id="team_a">
+        <!--Selecting Modal-->
+        <div class="modal fade select-team" role="dialog" id="selectTeamModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title">Select Your Teams</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
-              <div class="form-group">
-                <input onchange="setValue(event, 1)" type="text" name="team_b" class="form-control" placeholder="Team B" id="team_b">
-              </div>
-              <!-- Example single danger button -->
-              <div class="btn-group" style="padding-left: 35%; padding-bottom: 5%;">
-                <button type="button" style="background-color: #C59D5F; border-color: #C59D5F;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Winner
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#" id="option_a">team A</a>
-                  <a class="dropdown-item" href="#" id="option_b">Team B</a>
+              <div class="modal-body">
+                <div class="form-group">
+                  <input onchange="setValue(event, 0)" type="text" name="team_a" class="form-control" placeholder="Exact Team Name" id="team_a" required>
+                </div>
+                <div class="form-group">
+                  <input onchange="setValue(event, 1)" type="text" name="team_b" class="form-control" placeholder="Exact Team Name" id="team_b" required>
+                </div>
+                <p class="sameTeam">Both teams can't be same</p>
+                <!-- Example single danger button -->
+                <div class="btn-group" id="winning_team_div" style=" display: block; padding-left: 35%; padding-bottom: 5%;">
+                  <button id="winning_team" type="button" style="background-color: #C59D5F; border-color: #C59D5F;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Winner
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" id="option_a">team A</a>
+                    <a class="dropdown-item" href="#" id="option_b">Team B</a>
+                  </div>
+                </div>
+                <div class="form-group" style="text-align: center;">
+                  <label class="form-check-label">
+                      <input id="match_tie" onclick="turnTrue()" type="radio" class="form-check-input toggle" value="false" name="optradio"> Match Tie
+                  </label>
                 </div>
               </div>
-              <div class="form-group" style="text-align: center;">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optradio"> Match Tie
-                </label>
+  
+              <div class="modal-footer">
+                <button type="button" onclick="matchResult()" class="btn filter-btn">Submit</button>
               </div>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn filter-btn">Submit</button>
             </div>
           </div>
         </div>
-    </div>
     
     <!--adding Modal-->
     <div class="modal fade" role="dialog" id="loginModal">

@@ -19,12 +19,11 @@ const matchResult = () => {
   let winning_team = document.getElementById('winning_team').value;
   let match_tie = document.getElementById('match_tie').value;
 
-  //make sure both teams are not same
-  console.log(team_a +" " + team_b)     
+  //make sure both teams are not same    
   if( team_a == team_b){
     document.getElementsByClassName('sameTeam')[0].style.display="block";
   }
-  console.log(match_tie)
+
   let url = `/select-teams?team_a=${team_a}&team_b=${team_b}&winning_team=${winning_team}&tie=${match_tie}`
   const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
