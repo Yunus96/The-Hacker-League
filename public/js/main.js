@@ -10,6 +10,7 @@ function setValue(event, n) {
       // Set value
       option.value = option.innerHTML = userinput;
       }
+  
 
 //"Select Teams" sending request to server
 const matchResult = () => {
@@ -17,6 +18,12 @@ const matchResult = () => {
   let team_b = document.getElementById('team_b').value;
   let winning_team = document.getElementById('winning_team').value;
   let match_tie = document.getElementById('match_tie').value;
+
+  //make sure both teams are not same
+  console.log(team_a +" " + team_b)     
+  if( team_a == team_b){
+    document.getElementsByClassName('sameTeam')[0].style.display="block";
+  }
   console.log(match_tie)
   let url = `/select-teams?team_a=${team_a}&team_b=${team_b}&winning_team=${winning_team}&tie=${match_tie}`
   const xhr = new XMLHttpRequest();

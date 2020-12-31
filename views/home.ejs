@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Hacker League</title>
     <!--Styles-->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
     <!--Boostrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -51,6 +51,7 @@
               <div class="form-group">
                 <input onchange="setValue(event, 1)" type="text" name="team_b" class="form-control" placeholder="Exact Team Name" id="team_b" required>
               </div>
+              <p class="sameTeam">Both teams can't be same</p>
               <!-- Example single danger button -->
               <div class="btn-group" id="winning_team_div" style=" display: block; padding-left: 35%; padding-bottom: 5%;">
                 <button id="winning_team" type="button" style="background-color: #C59D5F; border-color: #C59D5F;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

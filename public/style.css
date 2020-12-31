@@ -214,3 +214,8 @@ p {
     height: 175px;
   }
 }
+.sameTeam{
+  color: red; 
+  font-size: small; 
+  display:none;
+}
