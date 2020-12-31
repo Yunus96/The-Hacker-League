@@ -8,7 +8,7 @@ function setValue(event, n) {
       // Get nth typeOf <option>
       const option = document.getElementsByClassName('dropdown-item')[n];  
       // Set value
-      option.value = option.innerHTML = `Team Name : ${userinput}`;
+      option.value = option.innerHTML = `Team Name : <b>${userinput}</b>`;
       }
   
 
