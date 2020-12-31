@@ -51,15 +51,16 @@
               <div class="form-group">
                 <input onchange="setValue(event, 1)" type="text" name="team_b" class="form-control" placeholder="Exact Team Name" id="team_b" required>
               </div>
+              <!--Warning message if both teams are same-->
               <p class="sameTeam">Both teams can't be same</p>
-              <!-- Example single danger button -->
+            
               <div class="btn-group" id="winning_team_div" style=" display: block; padding-left: 35%; padding-bottom: 5%;">
-                <button id="winning_team" type="button" style="background-color: #C59D5F; border-color: #C59D5F;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button  type="button" style="background-color: #C59D5F; border-color: #C59D5F;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Winner
                 </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#" id="option_a">team A</a>
-                  <a class="dropdown-item" href="#" id="option_b">Team B</a>
+                <div class="dropdown-menu" id="winning_team">
+                  <p class="dropdown-item" value="1" id="option_a">team A</p>
+                  <p class="dropdown-item" value="2" id="option_b">Team B</p>
                 </div>
               </div>
               <div class="form-group" style="text-align: center;">
