@@ -8,18 +8,19 @@ function setValue(event, n) {
       // Get nth typeOf <option>
       const option = document.getElementsByClassName('dropdown-item')[n];  
       // Set value
-      option.value = option.innerHTML = `Team Name : <b>${userinput}</b>`;
+      option.value = option.innerHTML = `${userinput}`;
       }
   
 
 //"Select Teams" sending request to server
 const matchResult = () => {
+
   let team_a = document.getElementById('team_a').value;
   let team_b = document.getElementById('team_b').value;
-  let winning_team = document.querySelector('#winning_team');
-  let exact_winning_team = winning_team.value
+  let winning_team = document.getElementById('inputGroupSelect01').value;
   let match_tie = document.getElementById('match_tie').value;
-  console.log(exact_winning_team)
+  console.log(winning_team)
+
   //make sure both teams are not same    
   if( team_a == team_b){
     document.getElementsByClassName('sameTeam')[0].style.display="block";
