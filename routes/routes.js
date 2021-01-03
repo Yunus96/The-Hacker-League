@@ -43,7 +43,7 @@ router.get(`/select-teams`,async (req, res)=>{
     const team_won = req.query.team_won;
     const team_lost = req.query.team_lost;
     const tie = req.query.tie;
-
+    
     //checking for team_a exist
     const team_a_exist = await Hackers.findOne({team_name : team_a})
     if(!team_a_exist) return res.json({'message' : `${team_a} doesn't exist`})
@@ -53,11 +53,11 @@ router.get(`/select-teams`,async (req, res)=>{
 
     
     if(tie == 'true') {
-        const teamA = await Hackers.updateOne({ team_name: team_a }, { $inc : { ties : 1, scores: 1}});
-        const teamB = await Hackers.updateOne( {team_name: team_b}, {$inc: {ties: 1, scores: 1}} )
-        return res.status(200).json({"Message":"Match Result Updated"})
+        const teamA = await Hackers.updateOne({ team_name: team_a }, { $inc : { ties : 1, score: 1}});
+        const teamB = await Hackers.updateOne({ team_name: team_b }, { $inc: { ties: 1, score: 1}} )
+        res.status(200).json({"Message":"Match Result Updated"})
     }else{
-        await Hackers.updateOne({ team_name: team_won }, { $inc : { wins : 1, scores: 3}});
+        await Hackers.updateOne({ team_name: team_won }, { $inc : { wins : 1, score: 3}});
         await Hackers.updateOne({ team_name: team_lost }, { $inc : { losses : 1}});
         return res.status(500).send('Updated')
     }

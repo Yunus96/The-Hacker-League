@@ -25,5 +25,4 @@ app.use(express.json())
 //lets our server accept urlparameter
 app.use(express.urlencoded({extended: false}))
 
-
 app.listen(process.env.PORT, ()=> console.log("Server Started"))

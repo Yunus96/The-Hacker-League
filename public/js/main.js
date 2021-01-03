@@ -88,8 +88,7 @@ const matchResult = () => {
       }
 
 //disabling winner option
-      function turnTrue() {
-        document.getElementById('dropdown').style.display = 'none';
-        document.getElementById("match_tie").value = 'true';
-      }
-    
+function turnTrue() {
+  document.getElementById('dropdown').style.display = 'none';
+  document.getElementById("match_tie").value = 'true';
+}
