@@ -15,6 +15,7 @@ function setValue(event, n) {
       }
     }
  
+ //disabling tie option   
 const disableTie = ()=>{
   document.getElementById('match_tie_div').style.display = 'none';
 }
@@ -34,11 +35,12 @@ const matchResult = () => {
     xhr.send();
     xhr.onload = () => {
       const json = JSON.parse(xhr.responseText);
-      if( json.message == '"Match Result Updated"'){
+      console.log(json)
+      if( json.Message == "Match Result Updated"){
         document.getElementById('result').style.display = 'block';
       } 
       else {
-        document.getElementById('loginModal').style.display = 'none';
+        console.log('error')
       }
     }
     xhr.onerror = ()=>{
@@ -74,7 +76,7 @@ const matchResult = () => {
         req.send();
         req.onload = () => {
           const json = JSON.parse(req.responseText);
-          if( json.message == 'team exist'){
+          if( json.Message == 'team exist'){
             document.getElementById('team_exist').style.display = 'block';
           } 
           else {
