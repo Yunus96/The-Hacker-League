@@ -5,7 +5,5 @@ Developing a Full Stack application where multiple teams of Hackers compete for 
 ### ToDo Things
 
 1. Add Home page and description of project
-2. Correct "Select Modal" option
-3. add 'JOI' package for validating user input
 4. deploy it
 
