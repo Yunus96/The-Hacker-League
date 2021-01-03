@@ -89,6 +89,7 @@ const matchResult = () => {
 
 //disabling winner option
       function turnTrue() {
-        return document.getElementById("match_tie").value = 'true';
+        document.getElementById('dropdown').style.display = 'none';
+        document.getElementById("match_tie").value = 'true';
       }
     
