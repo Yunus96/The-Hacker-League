@@ -1,31 +1,44 @@
-
-
-
 //"Select teams" option functionality
 function setValue(event, n) {  
+
       // User input
       const userinput = event.target.value; 
       // Get nth typeOf <option>
       const option = document.getElementsByClassName('dropdown-item')[n];  
       // Set value
       option.value = option.innerHTML = `${userinput}`;
+      //validating same team name
+      var team_a = document.getElementById('team_a').value;
+      var team_b = document.getElementById('team_b').value;      
+      if(team_a == team_b){
+          document.getElementsByClassName('sameTeam')[0].style.display="block";
       }
-  
+    }
+ 
+//function selectTeam (){  
+//}
+
 
 //"Select Teams" sending request to server
 const matchResult = () => {
+  
+  var team_a = document.getElementById('team_a').value;
+  var team_b = document.getElementById('team_b').value;
+  var winning_team = document.getElementById('inputGroupSelect01').value;
+  var match_tie = document.getElementById('match_tie').value;
+  console.log(team_a == team_b)
 
-  let team_a = document.getElementById('team_a').value;
-  let team_b = document.getElementById('team_b').value;
-  let winning_team = document.getElementById('inputGroupSelect01').value;
-  let match_tie = document.getElementById('match_tie').value;
-  console.log(winning_team)
-
-  //make sure both teams are not same    
-  if( team_a == team_b){
-    document.getElementsByClassName('sameTeam')[0].style.display="block";
+  //disable either winning-team or match_tie
+  console.log(winning_team.length)
+  if(winning_team.length > 0){
+    document.getElementById('match_tie_div').style.display = 'none';
+  } 
+  if(match_tie.value == 'true'){
+    document.getElementById('dropdown').style.display = 'none';
   }
+  console.log(match_tie)
 
+  //making request to backend
   let url = `/select-teams?team_a=${team_a}&team_b=${team_b}&winning_team=${winning_team}&tie=${match_tie}`
   const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
