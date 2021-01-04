@@ -5,5 +5,5 @@ Developing a Full Stack application where multiple teams of Hackers compete for 
 ### ToDo Things
 
 1. Add Home page and description of project
-4. deploy it
+4. refresh table after every update
 
