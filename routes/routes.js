@@ -8,7 +8,11 @@ router.get('/', (req, res)=>{
 
 router.get('/dashboard', async (req, res)=>{
     const allData = await Hackers.find()
-    res.render('index', {allData : allData });  
+    try{
+        res.render('index', {allData : allData });  
+    } catch(e){
+        res.send("Something Went Wrong")
+    }
 })
 
 router.get('/leader-board',async (req, res)=>{
